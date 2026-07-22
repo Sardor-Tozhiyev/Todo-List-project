@@ -63,6 +63,21 @@ python manage.py runserver
 
 ---
 
+## Testing
+
+Run tests with:
+
+```bash
+python manage.py test
+```
+
+Tests cover:
+
+- **Models** — string representation of `Task` and `Tag`, `is_overdue` logic
+- **Views** — home page rendering, task toggle, tag list page
+
+---
+
 ## Screenshots
 
 ### Todo List
@@ -80,22 +95,3 @@ Manage task categories by creating, editing, and deleting tags.
 ---
 
 ## Project Structure
-
-```
-tasks_project/
-│── tasks/
-│── tasks_project/
-│── templates/
-│── static/
-│── images/
-│── manage.py
-│── requirements.txt
-│── README.md
-│── .env.example
-```
-
----
-
-## Author
-
-Created as a learning project with Django.
