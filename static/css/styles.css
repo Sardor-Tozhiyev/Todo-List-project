@@ -1,84 +1,79 @@
 body {
-  background: #fff;
+  background-color: #fff;
 }
 
+/* Sidebar */
+
 .sidebar {
-  padding-top: 24px;
+  min-height: 100vh;
+  padding: 24px 16px;
+  border-right: 1px solid #dee2e6;
 }
 
 .list-group {
-  max-width: 260px;
+  max-width: 220px;
 }
 
 .list-group-item {
-  padding: 22px 28px;
-  font-size: 22px;
+  padding: 18px 24px;
+  font-size: 20px;
 }
 
-.page-title {
-  font-size: 64px;
+/* Headings */
+
+h1,
+h4 {
   font-weight: 700;
-  margin-bottom: 35px;
 }
 
-.task-item {
-  padding: 28px 0;
-  border-bottom: 1px solid #e5e5e5;
-}
+/* Home */
 
-.task-title {
-  font-size: 28px;
-  font-weight: 700;
+.border-bottom:last-child {
+  border-bottom: none !important;
 }
 
 .task-info {
-  margin-top: 18px;
-  color: #555;
-  font-size: 20px;
+  margin-top: 8px;
+  color: #6c757d;
 }
 
 .task-tags {
-  margin-top: 20px;
-  color: #777;
-  font-size: 20px;
+  margin-top: 8px;
 }
 
-.task-actions {
-  margin-top: 10px;
-}
-
-.status-done {
-  color: green;
-  font-weight: 700;
-}
-
-.status-not-done {
-  color: red;
-  font-weight: 700;
-}
-
-.deadline {
-  color: brown;
+.task-actions a {
+  margin-left: 12px;
 }
 
 .complete-btn {
-  width: 140px;
+  min-width: 120px;
 }
 
-.table td,
-.table th {
+/* Tags */
+
+.table th,
+.table td {
   vertical-align: middle;
-  font-size: 24px;
-  padding: 20px;
 }
 
-.form-wrapper {
-  max-width: 600px;
+.table th:nth-child(2),
+.table th:nth-child(3),
+.table td:nth-child(2),
+.table td:nth-child(3) {
+  width: 120px;
+  text-align: center;
 }
 
-.delete-box {
-  max-width: 600px;
+.table td {
+  padding: 14px 8px;
+  vertical-align: middle;
 }
+
+.table .btn {
+  min-width: 80px;
+}
+
+/* Forms */
 
 .form-wrapper {
   max-width: 650px;
@@ -96,42 +91,16 @@ body {
   min-width: 100px;
 }
 
+/* Delete pages */
+
 .delete-box {
   max-width: 650px;
 }
 
 .delete-box .alert {
-  margin-bottom: 30px;
-  font-size: 18px;
+  margin-bottom: 24px;
 }
 
-.page-title {
-  margin-bottom: 35px;
-}
-
-.task-actions a {
-  margin-right: 12px;
-  text-decoration: none;
-}
-
-.task-actions a:hover {
-  text-decoration: underline;
-}
-
-.task-tags {
-  margin-top: 10px;
-}
-
-.task-info {
-  margin-top: 12px;
-}
-
-.complete-btn {
-  min-width: 120px;
-}
-
-.sidebar {
-  min-height: 100vh;
-  border-right: 1px solid #dee2e6;
-  padding: 24px 16px;
+.delete-box .btn {
+  min-width: 100px;
 }
