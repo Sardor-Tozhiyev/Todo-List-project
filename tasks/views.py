@@ -6,7 +6,6 @@ from tasks.forms import TaskForm
 from tasks.models import Task, Tag
 
 
-
 class TaskListView(generic.ListView):
     model = Task
     template_name = "tasks/home.html"
@@ -52,6 +51,7 @@ class TaskToggleView(generic.View):
         task.is_done = not task.is_done
         task.save(update_fields=["is_done"])
         return redirect("tasks:home")
+
 
 class TagListView(generic.ListView):
     model = Tag

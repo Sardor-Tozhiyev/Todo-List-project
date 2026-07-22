@@ -2,10 +2,17 @@ from django.urls import path
 from django.views import View
 
 from tasks import views
-from tasks.views import (TaskListView,
-                         TaskCreateView, TaskUpdateView, TaskDeleteView, TaskToggleView, TagListView, TagCreateView,
-                         TagUpdateView, TagDeleteView,
-                         )
+from tasks.views import (
+    TaskListView,
+    TaskCreateView,
+    TaskUpdateView,
+    TaskDeleteView,
+    TaskToggleView,
+    TagListView,
+    TagCreateView,
+    TagUpdateView,
+    TagDeleteView,
+)
 
 app_name = "tasks"
 
@@ -20,4 +27,3 @@ urlpatterns = [
     path("tags/<int:pk>/update/", TagUpdateView.as_view(), name="tag-update"),
     path("tags/<int:pk>/delete/", TagDeleteView.as_view(), name="tag-delete"),
 ]
-
