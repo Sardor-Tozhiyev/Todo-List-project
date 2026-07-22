@@ -1,0 +1,106 @@
+body {
+  background-color: #fff;
+}
+
+/* Sidebar */
+
+.sidebar {
+  min-height: 100vh;
+  padding: 24px 16px;
+  border-right: 1px solid #dee2e6;
+}
+
+.list-group {
+  max-width: 220px;
+}
+
+.list-group-item {
+  padding: 18px 24px;
+  font-size: 20px;
+}
+
+/* Headings */
+
+h1,
+h4 {
+  font-weight: 700;
+}
+
+/* Home */
+
+.border-bottom:last-child {
+  border-bottom: none !important;
+}
+
+.task-info {
+  margin-top: 8px;
+  color: #6c757d;
+}
+
+.task-tags {
+  margin-top: 8px;
+}
+
+.task-actions a {
+  margin-left: 12px;
+}
+
+.complete-btn {
+  min-width: 120px;
+}
+
+/* Tags */
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table th:nth-child(2),
+.table th:nth-child(3),
+.table td:nth-child(2),
+.table td:nth-child(3) {
+  width: 120px;
+  text-align: center;
+}
+
+.table td {
+  padding: 14px 8px;
+  vertical-align: middle;
+}
+
+.table .btn {
+  min-width: 80px;
+}
+
+/* Forms */
+
+.form-wrapper {
+  max-width: 650px;
+}
+
+.form-wrapper label {
+  font-weight: 600;
+}
+
+.form-wrapper textarea {
+  min-height: 140px;
+}
+
+.form-wrapper .btn {
+  min-width: 100px;
+}
+
+/* Delete pages */
+
+.delete-box {
+  max-width: 650px;
+}
+
+.delete-box .alert {
+  margin-bottom: 24px;
+}
+
+.delete-box .btn {
+  min-width: 100px;
+}

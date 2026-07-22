@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}
+  TODO list
+{% endblock %}
+
+{% block content %}
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>TODO list</h1>
+
+    <a href="{% url 'tasks:task-create' %}" class="btn btn-primary">
+      Add task
+    </a>
+  </div>
+
+  {% for task in tasks %}
+    <div class="border-bottom py-3">
+
+      <div class="d-flex justify-content-between align-items-start">
+
+        <div>
+
+          <h4 class="mb-2">
+            {{ task.content }}
+
+            {% if task.is_done %}
+              <span class="text-success">Done</span>
+            {% else %}
+              <span class="text-danger">Not done</span>
+            {% endif %}
+          </h4>
+
+          <p class="mb-1 text-muted">
+            Created:
+            {{ task.datetime|date:"F j, Y, g:i a" }}
+
+            {% if task.deadline %}
+              <span class="text-danger ms-3">
+                Deadline:
+                {{ task.deadline|date:"F j, Y, g:i a" }}
+              </span>
+            {% endif %}
+          </p>
+
+          <p class="mb-0">
+            <strong>Tags:</strong>
+
+            {% for tag in task.tags.all %}
+              {{ tag.name }}{% if not forloop.last %}, {% endif %}
+            {% empty %}
+              -
+            {% endfor %}
+
+            <a
+              href="{% url 'tasks:task-update' task.pk %}"
+              class="ms-4 text-dark text-decoration-none"
+            >
+              Update
+            </a>
+
+            <a
+              href="{% url 'tasks:task-delete' task.pk %}"
+              class="ms-2 text-dark text-decoration-none"
+            >
+              Delete
+            </a>
+          </p>
+
+        </div>
+
+        <div class="ms-3">
+
+          <form
+            action="{% url 'tasks:task-toggle' task.pk %}"
+            method="post"
+          >
+            {% csrf_token %}
+
+            {% if task.is_done %}
+              <button
+                type="submit"
+                class="btn btn-secondary"
+              >
+                Undo
+              </button>
+            {% else %}
+              <button
+                type="submit"
+                class="btn btn-success"
+              >
+                Complete
+              </button>
+            {% endif %}
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% empty %}
+
+    <p>No tasks yet.</p>
+
+  {% endfor %}
+
+{% endblock %}
