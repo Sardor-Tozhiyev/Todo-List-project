@@ -8,7 +8,8 @@ class TaskForm(forms.ModelForm):
         required=False,
         input_formats=["%Y-%m-%dT%H:%M"],
         widget=forms.DateTimeInput(
-            attrs={"type": "datetime-local"}, format="%Y-%m-%dT%H:%M"
+            attrs={"type": "datetime-local"},
+            format="%Y-%m-%dT%H:%M",
         ),
     )
 
@@ -20,13 +21,8 @@ class TaskForm(forms.ModelForm):
                 attrs={
                     "rows": 4,
                     "placeholder": "What need to be done?",
-                    "class": "form-control",
                 }
             ),
-            "is_done": forms.CheckboxInput(
-                attrs={
-                    "class": "form-check-input",
-                }
-            ),
+            "is_done": forms.CheckboxInput(),
             "tags": forms.CheckboxSelectMultiple(),
         }
