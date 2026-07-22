@@ -93,5 +93,3 @@ Users can create tasks, assign tags, set deadlines, and mark tasks as completed.
 Manage task categories by creating, editing, and deleting tags.
 
 ---
-
-## Project Structure
