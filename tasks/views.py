@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from todo.forms import TaskForm
-from todo.models import Task, Tag
+from tasks.forms import TaskForm
+from tasks.models import Task, Tag
 
 
 def home(request):
@@ -17,11 +17,7 @@ def task_create(request):
             return redirect("home")
     else:
         form = TaskForm()
-    return render(
-        request,
-        "task_form.html",
-        {"form": form, "title": "New task"}
-    )
+    return render(request, "task_form.html", {"form": form, "title": "New task"})
 
 
 def task_update(request, pk):
@@ -33,11 +29,7 @@ def task_update(request, pk):
             return redirect("home")
     else:
         form = TaskForm(instance=task)
-    return render(
-        request,
-        "task_form.html",
-        {"form": form, "title": "Edit task"}
-    )
+    return render(request, "task_form.html", {"form": form, "title": "Edit task"})
 
 
 def task_delete(request, pk):
@@ -46,8 +38,7 @@ def task_delete(request, pk):
         task.delete()
         return redirect("home")
     else:
-        return render(request, "confirm_delete.html",
-                      {"task": task})
+        return render(request, "confirm_delete.html", {"task": task})
 
 
 def task_toggle(request, pk):
@@ -56,10 +47,7 @@ def task_toggle(request, pk):
     task.save(update_fields=["is_done"])
     return redirect("home")
 
+
 def tag_list(request):
     tags = Tag.objects.all()
-    return render(
-        request,
-        "tag_list.html",
-        {"tags": tags}
-    )
+    return render(request, "tag_list.html", {"tags": tags})

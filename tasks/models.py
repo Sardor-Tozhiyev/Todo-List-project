@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models import ManyToManyField
 from django.utils import timezone
 
 
@@ -18,11 +17,13 @@ class Task(models.Model):
     tags = models.ManyToManyField(Tag, related_name="tasks")
 
     class Meta:
-        ordering = ['is_done', '-datetime']
+        ordering = ["is_done", "-datetime"]
 
     def __str__(self):
         return self.content[:50]
 
     @property
     def is_overdue(self):
-        return bool(self.deadline) and not self.is_done and self.deadline < timezone.now()
+        return (
+            bool(self.deadline) and not self.is_done and self.deadline < timezone.now()
+        )
